@@ -37,6 +37,10 @@
   margin-top: 4vh;
   display: flex;
 }
+.orange {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
 
 #LeftButton {
   border-bottom-left-radius: 10px;
@@ -109,7 +113,7 @@
   justify-content: center;
   align-items: center;
 }
-#checkIcon{
+#checkIcon {
   color: rgba(222, 226, 230, 1);
 }
 #LeftButtonPre:hover {
