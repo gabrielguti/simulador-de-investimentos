@@ -1,5 +1,5 @@
 #FormContainer {
-  background-color: var(--gray200);
+  background-color: rgba(222, 226, 230, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +53,14 @@
   color: rgba(222, 226, 230, 1);
   border: 2px solid black;
 }
-
+#LeftButton:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+#RightButton:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
 #RightButton {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
@@ -102,23 +109,36 @@
   justify-content: center;
   align-items: center;
 }
-
+#checkIcon{
+  color: rgba(222, 226, 230, 1);
+}
 #LeftButtonPre:hover {
   background-color: rgba(242, 151, 68, 1);
   color: rgba(222, 226, 230, 1);
   border: 2px solid black;
 }
-
+#LeftButtonPre:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
 #MiddleButtonPos:hover {
   background-color: rgba(242, 151, 68, 1);
   color: rgba(222, 226, 230, 1);
   border: 2px solid black;
+}
+#MiddleButtonPos:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
 }
 
 #RightButtonFix:hover {
   background-color: rgba(242, 151, 68, 1);
   color: rgba(222, 226, 230, 1);
   border: 2px solid black;
+}
+#RightButtonFix:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
 }
 
 #send-clear-buttons {
