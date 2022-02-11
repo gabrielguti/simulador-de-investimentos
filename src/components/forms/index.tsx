@@ -5,10 +5,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
 import CheckIcon from "@mui/icons-material/Check";
+import { UseSimulationContext } from "../../providers/simulationProvider";
 
 const Form = () => {
-  const [ipca, setIpca] = useState<string>("");
-  const [cdi, setCdi] = useState<string>("");
+  const { getSimulationFunction, ipca, getIpcaAndCdi, cdi } =
+    UseSimulationContext();
+
   const [rendimento, setRendimento] = useState<string>("");
   const [indexacao, setIndexacao] = useState<string>("");
   const [checkBruto, setCheckBruto] = useState<boolean>(false);
@@ -18,13 +20,7 @@ const Form = () => {
   const [checkFix, setCheckFix] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/indicadores")
-      .then((response) => response.json())
-      .then((response) => {
-        setIpca(response[1].valor);
-        setCdi(response[0].valor);
-      })
-      .catch((error) => console.log(error));
+    getIpcaAndCdi();
   });
   const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
@@ -35,22 +31,16 @@ const Form = () => {
     setIndexacao("");
     setIndexacao(button.name);
     if (button.name === "pos") {
-      setCheckLiquido(false);
-      setCheckBruto(false);
       setCheckPre(false);
       setCheckFix(false);
       setCheckPos(false);
       setCheckPos(true);
     } else if (button.name === "pre") {
-      setCheckLiquido(false);
-      setCheckBruto(false);
       setCheckFix(false);
       setCheckPos(false);
       setCheckPre(false);
       setCheckPre(true);
     } else {
-      setCheckLiquido(false);
-      setCheckBruto(false);
       setCheckPre(false);
       setCheckPos(false);
       setCheckFix(false);
@@ -67,16 +57,10 @@ const Form = () => {
     setRendimento("");
     setRendimento(button.name);
     if (button.name === "bruto") {
-      setCheckPre(false);
-      setCheckPos(false);
-      setCheckFix(false);
       setCheckLiquido(false);
       setCheckBruto(false);
       setCheckBruto(true);
     } else {
-      setCheckPre(false);
-      setCheckPos(false);
-      setCheckFix(false);
       setCheckBruto(false);
       setCheckLiquido(false);
       setCheckLiquido(true);
@@ -96,14 +80,12 @@ const Form = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(Schema) });
 
-  //passar função para provider
   const onSubmitFunction = () => {
-    fetch(
-      `http://localhost:3000/simulacoes?tipoIndexacao=${indexacao}&tipoRendimento=${rendimento}`
-    )
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    const newData = {
+      indexacao: indexacao,
+      rendimento: rendimento,
+    };
+    getSimulationFunction(newData);
   };
 
   return (
@@ -118,6 +100,7 @@ const Form = () => {
               name="bruto"
               onClick={buttonHandlerRendimento}
               id="LeftButton"
+              className={checkBruto ? "orange" : ""}
             >
               {checkBruto ? <CheckIcon id="checkIcon" /> : <></>}
               Bruto
@@ -126,6 +109,7 @@ const Form = () => {
               name="liqudo"
               onClick={buttonHandlerRendimento}
               id="RightButton"
+              className={checkLiquido ? "orange" : ""}
             >
               {checkLiquido ? <CheckIcon id="checkIcon" /> : <></>}
               Líquido
@@ -164,6 +148,7 @@ const Form = () => {
               onClick={buttonHandlerIndexacao}
               id="LeftButtonPre"
               name="pre"
+              className={checkPre ? "orange" : ""}
             >
               {checkPre ? <CheckIcon id="checkIcon" /> : <></>}
               Pré
@@ -172,6 +157,7 @@ const Form = () => {
               onClick={buttonHandlerIndexacao}
               name="pos"
               id="MiddleButtonPos"
+              className={checkPos ? "orange" : ""}
             >
               {checkPos ? <CheckIcon id="checkIcon" /> : <></>}
               Pós
@@ -180,6 +166,7 @@ const Form = () => {
               onClick={buttonHandlerIndexacao}
               name="fixado"
               id="RightButtonFix"
+              className={checkFix ? "orange" : ""}
             >
               {checkFix ? <CheckIcon id="checkIcon" /> : <></>}
               Fixado
