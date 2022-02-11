@@ -164,7 +164,7 @@ const Form = () => {
             </button>
             <button
               onClick={buttonHandlerIndexacao}
-              name="fixado"
+              name="ipca"
               id="RightButtonFix"
               className={checkFix ? "orange" : ""}
             >
