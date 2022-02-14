@@ -83,8 +83,22 @@
 
 #inputField {
   border-bottom: 2px solid black;
+  font-size: medium;
+  font-weight: bold;
 }
-
+#red-label{
+  color: red;
+}
+#red-input{
+  border-bottom: 2px solid red;
+  font-size: medium;
+  font-weight: bold;
+}
+#error-message{
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+}
 #LeftButtonPre {
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
@@ -156,7 +170,8 @@
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   color: black;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 16px;
 }
 #sendData {
   height: 5vh;
@@ -165,7 +180,9 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   color: black;
-  font-weight: bold;
+  font-weight: bolder;
+  background-color: rgb(156, 153, 153);
+  font-size: 16px;
 }
 #clearData:hover {
   background-color: rgba(242, 151, 68, 1);

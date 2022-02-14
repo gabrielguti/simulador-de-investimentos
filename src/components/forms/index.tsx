@@ -68,15 +68,19 @@ const Form = () => {
   };
 
   const Schema = yup.object().shape({
-    aporte_inicial: yup.string().required("campo deve ser preenchido"),
-    prazo: yup.string().required("campo deve ser preenchido"),
-    aporte_mensal: yup.string().required("campo deve ser preenchido"),
-    rentabilidade: yup.string().required("campo deve ser preenchido"),
+    aporte_inicial: yup.number().typeError("Aporte deve ser um número"),
+    prazo: yup
+      .number()
+      .typeError("Prazo deve ser um número")
+      .max(12, "Prazo calculado em meses por ano"),
+    aporte_mensal: yup.number().typeError("Aporte deve ser um número"),
+    rentabilidade: yup.number().typeError("Rentabilidade deve ser um número"),
   });
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(Schema) });
 
@@ -87,11 +91,19 @@ const Form = () => {
     };
     getSimulationFunction(newData);
   };
+  const handleReset = () => {
+    reset();
+    setCheckLiquido(false);
+    setCheckBruto(false);
+    setCheckPre(false);
+    setCheckPos(false);
+    setCheckFix(false);
+  };
 
   return (
     <section id="FormContainer">
       <div id="title">
-                <h2>Simulador</h2>
+        <h2>Simulador</h2>
       </div>
       <form className="FormBox" onSubmit={handleSubmit(onSubmitFunction)}>
         <div className="formComponents">
@@ -100,6 +112,7 @@ const Form = () => {
           </div>
           <div className="ButtonBox">
             <button
+              type="button"
               name="bruto"
               onClick={buttonHandlerRendimento}
               id="LeftButton"
@@ -109,6 +122,7 @@ const Form = () => {
               Bruto
             </button>
             <button
+              type="button"
               name="liqudo"
               onClick={buttonHandlerRendimento}
               id="RightButton"
@@ -119,25 +133,23 @@ const Form = () => {
             </button>
           </div>
           <div className="InputsBox">
-            <label>Aporte Inicial</label>
+            <label id={errors.aporte_inicial ? "red-label" : ""}>
+              Aporte Inicial
+            </label>
             <input
               {...register("aporte_inicial")}
-              type="number"
-              id="inputField"
-              // placeholder="Ex: R$5.000,00"
+              id={errors.aporte_inicial ? "red-input" : "inputField"}
             />
-            <span>{errors.aporte_inicial?.message}</span>
-            <label htmlFor="prazo">Prazo (em meses)</label>
+            <span id="error-message">{errors.aporte_inicial?.message}</span>
+            <label id={errors.prazo ? "red-label" : ""} htmlFor="prazo">
+              Prazo (em meses)
+            </label>
             <input
               {...register("prazo")}
-              type="number"
-              id="inputField"
+              id={errors.prazo ? "red-input" : "inputField"}
               name="prazo"
-              min="1"
-              max="12"
-              // placeholder="Ex: 5"
             />
-            <span>{errors.prazo?.message}</span>
+            <span id="error-message">{errors.prazo?.message}</span>
             <label htmlFor="ipca">IPCA (ao ano)</label>
             <input id="inputField" name="ipca" disabled value={`${ipca}%`} />
           </div>
@@ -148,6 +160,7 @@ const Form = () => {
           </div>
           <div className="ButtonBox">
             <button
+              type="button"
               onClick={buttonHandlerIndexacao}
               id="LeftButtonPre"
               name="pre"
@@ -157,6 +170,7 @@ const Form = () => {
               Pré
             </button>
             <button
+              type="button"
               onClick={buttonHandlerIndexacao}
               name="pos"
               id="MiddleButtonPos"
@@ -166,6 +180,7 @@ const Form = () => {
               Pós
             </button>
             <button
+              type="button"
               onClick={buttonHandlerIndexacao}
               name="ipca"
               id="RightButtonFix"
@@ -177,28 +192,33 @@ const Form = () => {
           </div>
 
           <div className="InputsBox">
-            <label>Aporte Mensal</label>
+            <label id={errors.aporte_mensal ? "red-label" : ""}>
+              Aporte Mensal
+            </label>
             <input
               {...register("aporte_mensal")}
-              type="number"
-              id="inputField"
-              // placeholder="Ex: R$200,00"
+              id={errors.aporte_mensal ? "red-input" : "inputField"}
             />
-            <span>{errors.aporte_mensal?.message}</span>
-            <label htmlFor="rentabilidade">Rentabilidade(%)</label>
+            <span id="error-message">{errors.aporte_mensal?.message}</span>
+            <label
+              id={errors.rentabilidade ? "red-label" : ""}
+              htmlFor="rentabilidade"
+            >
+              Rentabilidade(%)
+            </label>
             <input
               {...register("rentabilidade")}
-              type="number"
-              id="inputField"
+              id={errors.rentabilidade ? "red-input" : "inputField"}
               name="rentabilidade"
-              // placeholder="Ex: 20%"
             />
-            <span>{errors.rentabilidade?.message}</span>
+            <span id="error-message">{errors.rentabilidade?.message}</span>
             <label htmlFor="cdi">CDI (ao ano)</label>
             <input id="inputField" name="cdi" disabled value={`${cdi}%`} />
           </div>
           <div id="send-clear-buttons">
-            <button id="clearData">Limpar dados</button>
+            <button type="button" onClick={handleReset} id="clearData">
+              Limpar dados
+            </button>
             <button id="sendData" type="submit">
               Simular
             </button>
