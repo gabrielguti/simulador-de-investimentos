@@ -13,6 +13,8 @@ interface SimulationProviderProps {
 interface SimulationContextData {
   getSimulationFunction: (newData: DataProps) => void;
   getIpcaAndCdi: () => void;
+  graphAp: any;
+  graphNap: any;
   ipca: string;
   cdi: string;
   simulateData: any;
@@ -29,6 +31,8 @@ export const SimulationProvider = ({ children }: SimulationProviderProps) => {
   const [ipca, setIpca] = useState<string>("");
   const [cdi, setCdi] = useState<string>("");
   const [simulateData, setSimulateData] = useState();
+  const [graphAp, setGraphAp] = useState([]);
+  const [graphNap, setGraphNap] = useState([]);
 
   const getIpcaAndCdi = useCallback(() => {
     fetch("http://localhost:3000/indicadores")
@@ -45,13 +49,25 @@ export const SimulationProvider = ({ children }: SimulationProviderProps) => {
       `http://localhost:3000/simulacoes?tipoIndexacao=${newData.indexacao}&tipoRendimento=${newData.rendimento}`
     )
       .then((response) => response.json())
-      .then((response) => setSimulateData(response))
+      .then((response) => {
+        setSimulateData(response);
+        setGraphAp(response[0].graficoValores.comAporte);
+        setGraphNap(response[0].graficoValores.semAporte);
+      })
       .catch((error) => console.log(error));
   };
 
   return (
     <SimulationContext.Provider
-      value={{ getSimulationFunction, getIpcaAndCdi, ipca, cdi, simulateData }}
+      value={{
+        getSimulationFunction,
+        getIpcaAndCdi,
+        ipca,
+        cdi,
+        simulateData,
+        graphAp,
+        graphNap,
+      }}
     >
       {children}
     </SimulationContext.Provider>

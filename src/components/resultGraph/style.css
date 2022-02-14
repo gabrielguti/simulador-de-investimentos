@@ -1,0 +1,19 @@
+.graphic{
+    width: 85%;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.Aporte{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+}
+.sem-aporte{
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

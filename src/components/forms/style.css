@@ -45,8 +45,8 @@
 #LeftButton {
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  width: 123px;
-  height: 10vh;
+  width: 120px;
+  height: 5vh;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -68,8 +68,8 @@
 #RightButton {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  width: 123px;
-  height: 10vh;
+  width: 120px;
+  height: 5vh;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -89,16 +89,16 @@
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border: 1px solid black;
-  width: 82px;
-  height: 10vh;
+  width: 80px;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #MiddleButtonPos {
-  width: 82px;
+  width: 80px;
   border: 1px solid black;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,8 +107,8 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   border: 1px solid black;
-  width: 82px;
-  height: 10vh;
+  width: 80px;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,8 +150,8 @@
   margin-top: 4vh;
 }
 #clearData {
-  height: 10vh;
-  width: 123px;
+  height: 5vh;
+  width: 120px;
   border: 1px solid;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
@@ -159,9 +159,9 @@
   font-weight: bold;
 }
 #sendData {
-  height: 10vh;
+  height: 5vh;
   border: 1px solid;
-  width: 123px;
+  width: 120px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   color: black;
@@ -190,5 +190,22 @@
   }
   #send-clear-buttons {
     margin-left: -60%;
+  }
+  
+}
+
+@media screen and (min-width:1024px){
+  #send-clear-buttons {
+    margin-left: -50%;
+  }
+  
+  
+  .FormBox {
+    width: 510px;
+    
+  }
+  #FormContainer{
+    width: 50%;
+    margin-left: 30px;
   }
 }
