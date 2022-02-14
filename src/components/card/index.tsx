@@ -1,7 +1,7 @@
 import "./style.css";
 interface CardProps {
   title: string;
-  value: number;
+  value: string;
   greenColor?: boolean;
 }
 

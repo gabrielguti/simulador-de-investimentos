@@ -90,6 +90,9 @@ const Form = () => {
 
   return (
     <section id="FormContainer">
+      <div id="title">
+                <h2>Simulador</h2>
+      </div>
       <form className="FormBox" onSubmit={handleSubmit(onSubmitFunction)}>
         <div className="formComponents">
           <div className="title">

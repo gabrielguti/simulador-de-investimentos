@@ -177,6 +177,9 @@
   display: flex;
   justify-content: space-between;
 }
+.formComponents {
+  margin-top: 30px;
+}
 
 @media screen and (min-width: 768px) {
   .FormBox {
@@ -191,20 +194,23 @@
   #send-clear-buttons {
     margin-left: -60%;
   }
-  
+  .formComponents {
+    margin-top: 0px;
+  }
 }
 
-@media screen and (min-width:1024px){
+@media screen and (min-width: 1024px) {
   #send-clear-buttons {
     margin-left: -50%;
   }
-  
-  
+  .formComponents {
+    margin-top: 0px;
+  }
+
   .FormBox {
     width: 510px;
-    
   }
-  #FormContainer{
+  #FormContainer {
     width: 50%;
     margin-left: 30px;
   }

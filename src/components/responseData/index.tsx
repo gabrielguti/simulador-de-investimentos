@@ -16,33 +16,29 @@ const ResponseData = () => {
               <div id="cards-box">
                 <Card
                   title="Valor Final Bruto"
-                  value={item.valorFinalBruto}
+                  value={`R$ ${item.valorFinalBruto}`}
                 />
-                <Card
-                  title="Alíquota do IR"
-                  value={item.aliquotaIR}
-                />
+                <Card title="Alíquota do IR" value={`${item.aliquotaIR}%`} />
                 <Card
                   title="Valor Pago em IR"
-                  value={item.valorPagoIR}
+                  value={`R$ ${item.valorPagoIR}`}
                 />
                 <Card
                   title="Valor Final Líquido"
-                  value={item.valorFinalLiquido}
+                  value={`R$ ${item.valorFinalLiquido}`}
                   greenColor={true}
                 />
                 <Card
                   title="Valor Total Investido"
-                  value={item.valorTotalInvestido}
+                  value={`R$ ${item.valorTotalInvestido}`}
                 />
                 <Card
                   title="Ganho Líquido"
                   greenColor={true}
-                  value={item.ganhoLiquido}
+                  value={`R$ ${item.ganhoLiquido}`}
                 />
               </div>
-              <Graph/>
-
+              <Graph />
             </div>
           );
         })
