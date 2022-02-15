@@ -23,7 +23,10 @@ const Form = () => {
     if (!ipca && !cdi) {
       getIpcaAndCdi();
     }
-  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  
   const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -107,7 +110,11 @@ const Form = () => {
       <div id="title">
         <h2>Simulador</h2>
       </div>
-      <form className="FormBox" onSubmit={handleSubmit(onSubmitFunction)}>
+      <form
+        data-testid="form-container"
+        className="FormBox"
+        onSubmit={handleSubmit(onSubmitFunction)}
+      >
         <div className="formComponents">
           <div className="title">
             Rendimento <InfoOutlinedIcon />
