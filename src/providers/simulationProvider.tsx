@@ -45,6 +45,7 @@ export const SimulationProvider = ({ children }: SimulationProviderProps) => {
   }, []);
 
   const getSimulationFunction = (newData: DataProps) => {
+    console.log(newData.indexacao, newData.rendimento);
     fetch(
       `http://localhost:3000/simulacoes?tipoIndexacao=${newData.indexacao}&tipoRendimento=${newData.rendimento}`
     )
