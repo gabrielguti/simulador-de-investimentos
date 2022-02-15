@@ -20,7 +20,9 @@ const Form = () => {
   const [checkFix, setCheckFix] = useState<boolean>(false);
 
   useEffect(() => {
-    getIpcaAndCdi();
+    if (!ipca && !cdi) {
+      getIpcaAndCdi();
+    }
   });
   const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
@@ -123,7 +125,7 @@ const Form = () => {
             </button>
             <button
               type="button"
-              name="liqudo"
+              name="liquido"
               onClick={buttonHandlerRendimento}
               id="RightButton"
               className={checkLiquido ? "orange" : ""}
