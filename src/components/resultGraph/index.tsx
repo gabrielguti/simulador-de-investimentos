@@ -18,7 +18,7 @@ const Graph = () => {
   return (
     <>
       <div id="graph-title">Projeção de Valores</div>
-      <div className="graphic">
+      <div data-testid="graphic-component" className="graphic">
         {graphAp ? (
           <>
             <div className="legend-color">

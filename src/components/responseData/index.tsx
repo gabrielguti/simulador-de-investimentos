@@ -5,7 +5,7 @@ import "./style.css";
 const ResponseData = () => {
   const { simulateData } = UseSimulationContext();
   return (
-    <div id="response-data">
+    <div data-testid="response-card" id="response-data">
       {simulateData ? (
         simulateData.map((item: any, index: number) => {
           return (
