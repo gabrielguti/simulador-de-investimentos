@@ -26,7 +26,7 @@ const Form = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const buttonHandlerIndexacao = (
+  const buttonHandlerIndexacao = ( 
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
@@ -72,12 +72,12 @@ const Form = () => {
   };
 
   const Schema = yup.object().shape({
-    aporte_inicial: yup.number().typeError("Aporte deve ser um número"),
+    aporte_inicial: yup.number().typeError("Aporte inicial deve ser um número"),
     prazo: yup
       .number()
       .typeError("Prazo deve ser um número")
       .max(12, "Prazo calculado em meses por ano"),
-    aporte_mensal: yup.number().typeError("Aporte deve ser um número"),
+    aporte_mensal: yup.number().typeError("Aporte mensal deve ser um número"),
     rentabilidade: yup.number().typeError("Rentabilidade deve ser um número"),
   });
 
@@ -142,14 +142,16 @@ const Form = () => {
             </button>
           </div>
           <div className="InputsBox">
-            <label id={errors.aporte_inicial ? "red-label" : ""}>
+            <label
+              id={errors.aporte_inicial ? "red-label" : ""}
+              htmlFor="aporte-inicial"
+            >
               Aporte Inicial
             </label>
             <input
-              {...register("aporte_inicial")}
               id={errors.aporte_inicial ? "red-input" : "inputField"}
               data-testid="aporte-inicial-input"
-              name="aporte-inicial"
+              {...register("aporte_inicial")}
             />
             <span id="error-message">{errors.aporte_inicial?.message}</span>
             <label id={errors.prazo ? "red-label" : ""} htmlFor="prazo">
@@ -159,7 +161,6 @@ const Form = () => {
               {...register("prazo")}
               id={errors.prazo ? "red-input" : "inputField"}
               data-testid="prazo-input"
-              name="prazo"
             />
             <span id="error-message">{errors.prazo?.message}</span>
             <label htmlFor="ipca">IPCA (ao ano)</label>
@@ -205,14 +206,16 @@ const Form = () => {
           </div>
 
           <div className="InputsBox">
-            <label id={errors.aporte_mensal ? "red-label" : ""}>
+            <label
+              id={errors.aporte_mensal ? "red-label" : ""}
+              htmlFor="aporte-mensal"
+            >
               Aporte Mensal
             </label>
             <input
               {...register("aporte_mensal")}
               id={errors.aporte_mensal ? "red-input" : "inputField"}
               data-testid="aporte-mensal-input"
-              name="aporte-mensal"
             />
             <span id="error-message">{errors.aporte_mensal?.message}</span>
             <label
@@ -225,7 +228,6 @@ const Form = () => {
               {...register("rentabilidade")}
               id={errors.rentabilidade ? "red-input" : "inputField"}
               data-testid="rentabilidade-input"
-              name="rentabilidade"
             />
             <span id="error-message">{errors.rentabilidade?.message}</span>
             <label htmlFor="cdi">CDI (ao ano)</label>
