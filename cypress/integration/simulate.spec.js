@@ -2,9 +2,6 @@ context("Simulate", () => {
   it("Put data in inputs and tries simulate values", () => {
     cy.visit("http://localhost:3001");
     cy.viewport(1440, 900);
-
-    cy.contains("Bruto").click();
-    cy.contains("Fixado").click();
   });
 
   it("Tries to add information in inputs", () => {
@@ -52,12 +49,18 @@ context("Simulate", () => {
       },
     }).as("simulate-data");
 
-    cy.get("input[name=aporte-inicial]").type(12);
-    cy.get("input[name=prazo]").type(12);
+    cy.contains("Bruto").click();
+    cy.contains("Fixado").click();
 
-    cy.get("input[name=aporte-mensal]");
+    cy.get("input[data-testid=aporte-inicial-input]").type(1200, {
+      delay: 250,
+    });
 
-    cy.get("input[name=rentabilidade]").type(5);
+    cy.get("input[data-testid=prazo-input]").type(12, { delay: 250 });
+
+    cy.get("input[data-testid=aporte-mensal-input]").type(500, { delay: 250 });
+
+    cy.get("input[data-testid=rentabilidade-input]").type(6, { delay: 250 });
 
     cy.get("button[type=submit]").click();
 
