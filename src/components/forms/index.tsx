@@ -23,10 +23,9 @@ const Form = () => {
     if (!ipca && !cdi) {
       getIpcaAndCdi();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  
   const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -126,6 +125,7 @@ const Form = () => {
               onClick={buttonHandlerRendimento}
               id="LeftButton"
               className={checkBruto ? "orange" : ""}
+              data-testid="bruto-button"
             >
               {checkBruto ? <CheckIcon id="checkIcon" /> : <></>}
               Bruto
@@ -148,6 +148,7 @@ const Form = () => {
             <input
               {...register("aporte_inicial")}
               id={errors.aporte_inicial ? "red-input" : "inputField"}
+              data-testid="aporte-inicial-input"
             />
             <span id="error-message">{errors.aporte_inicial?.message}</span>
             <label id={errors.prazo ? "red-label" : ""} htmlFor="prazo">
@@ -156,7 +157,7 @@ const Form = () => {
             <input
               {...register("prazo")}
               id={errors.prazo ? "red-input" : "inputField"}
-              name="prazo"
+              data-testid="prazo-input"
             />
             <span id="error-message">{errors.prazo?.message}</span>
             <label htmlFor="ipca">IPCA (ao ano)</label>
@@ -174,6 +175,7 @@ const Form = () => {
               id="LeftButtonPre"
               name="pre"
               className={checkPre ? "orange" : ""}
+              data-testid="pre-button"
             >
               {checkPre ? <CheckIcon id="checkIcon" /> : <></>}
               Pré
@@ -207,6 +209,7 @@ const Form = () => {
             <input
               {...register("aporte_mensal")}
               id={errors.aporte_mensal ? "red-input" : "inputField"}
+              data-testid="aporte-mensal-input"
             />
             <span id="error-message">{errors.aporte_mensal?.message}</span>
             <label
@@ -218,17 +221,22 @@ const Form = () => {
             <input
               {...register("rentabilidade")}
               id={errors.rentabilidade ? "red-input" : "inputField"}
-              name="rentabilidade"
+              data-testid="rentabilidade-input"
             />
             <span id="error-message">{errors.rentabilidade?.message}</span>
             <label htmlFor="cdi">CDI (ao ano)</label>
             <input id="inputField" name="cdi" disabled value={`${cdi}%`} />
           </div>
           <div id="send-clear-buttons">
-            <button type="button" onClick={handleReset} id="clearData">
+            <button
+              data-testid="clear-button"
+              type="button"
+              onClick={handleReset}
+              id="clearData"
+            >
               Limpar dados
             </button>
-            <button id="sendData" type="submit">
+            <button data-testid="send-button" id="sendData" type="submit">
               Simular
             </button>
           </div>

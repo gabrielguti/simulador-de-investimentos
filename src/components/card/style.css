@@ -18,12 +18,11 @@
 
 p {
   font-weight: bolder;
-  
 }
 span {
-    margin-top: 2vh;
-    font-weight: bolder;
-  }
+  margin-top: 2vh;
+  font-weight: bolder;
+}
 
 @media screen and (min-width: 1024px) {
   .card {

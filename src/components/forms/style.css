@@ -86,15 +86,15 @@
   font-size: medium;
   font-weight: bold;
 }
-#red-label{
+#red-label {
   color: red;
 }
-#red-input{
+#red-input {
   border-bottom: 2px solid red;
   font-size: medium;
   font-weight: bold;
 }
-#error-message{
+#error-message {
   color: red;
   font-size: 12px;
   margin-top: -10px;

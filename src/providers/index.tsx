@@ -9,4 +9,4 @@ const AppProvider = ({ children }: AppProviderProps) => {
   return <SimulationProvider>{children}</SimulationProvider>;
 };
 
-export default AppProvider
+export default AppProvider;
