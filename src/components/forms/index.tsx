@@ -149,6 +149,7 @@ const Form = () => {
               {...register("aporte_inicial")}
               id={errors.aporte_inicial ? "red-input" : "inputField"}
               data-testid="aporte-inicial-input"
+              name="aporte-inicial"
             />
             <span id="error-message">{errors.aporte_inicial?.message}</span>
             <label id={errors.prazo ? "red-label" : ""} htmlFor="prazo">
@@ -158,6 +159,7 @@ const Form = () => {
               {...register("prazo")}
               id={errors.prazo ? "red-input" : "inputField"}
               data-testid="prazo-input"
+              name="prazo"
             />
             <span id="error-message">{errors.prazo?.message}</span>
             <label htmlFor="ipca">IPCA (ao ano)</label>
@@ -210,6 +212,7 @@ const Form = () => {
               {...register("aporte_mensal")}
               id={errors.aporte_mensal ? "red-input" : "inputField"}
               data-testid="aporte-mensal-input"
+              name="aporte-mensal"
             />
             <span id="error-message">{errors.aporte_mensal?.message}</span>
             <label
@@ -222,6 +225,7 @@ const Form = () => {
               {...register("rentabilidade")}
               id={errors.rentabilidade ? "red-input" : "inputField"}
               data-testid="rentabilidade-input"
+              name="rentabilidade"
             />
             <span id="error-message">{errors.rentabilidade?.message}</span>
             <label htmlFor="cdi">CDI (ao ano)</label>
