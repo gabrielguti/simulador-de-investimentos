@@ -34,7 +34,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin-top: 4vh;
+  margin-top: 10px;
   display: flex;
 }
 .orange {
@@ -51,6 +51,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #LeftButton:hover {
   background-color: rgba(242, 151, 68, 1);
@@ -74,6 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #RightButton:hover {
   background-color: rgba(242, 151, 68, 1);
@@ -108,6 +110,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #MiddleButtonPos {
   width: 80px;
@@ -116,6 +119,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #RightButtonFix {
   border-bottom-right-radius: 10px;
@@ -126,6 +130,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #checkIcon {
   color: rgba(222, 226, 230, 1);
@@ -162,6 +167,7 @@
 #send-clear-buttons {
   width: 248px;
   margin-top: 4vh;
+  display: flex;
 }
 #clearData {
   height: 5vh;
@@ -193,6 +199,9 @@
 .title {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+  
 }
 .formComponents {
   margin-top: 30px;
@@ -202,7 +211,6 @@
   .FormBox {
     align-items: flex-start;
     flex-direction: row;
-
     width: 550px;
     justify-content: space-between;
     margin-left: 10px;
@@ -213,6 +221,10 @@
   }
   .formComponents {
     margin-top: 0px;
+  }
+  #title-form{
+    margin-top: 1vh;
+  margin-bottom: 5vh;
   }
 }
 
@@ -230,5 +242,37 @@
   #FormContainer {
     width: 50%;
     margin-left: 30px;
+  }
+  #title-form {
+    float: right;
+    width: 510px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #title-form {
+    width: 600px;
+  }
+  .FormBox {
+    width: 600px;
+  }
+  #send-clear-buttons {
+    margin-left: -120%;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+  }
+  #clearData {
+    width: 45%;
+    border-radius: 10px;
+    height: 6vh;
+    font-size: 18px;
+  }
+  #sendData {
+    width: 45%;
+    border: 0;
+    border-radius: 10px;
+    height: 6vh;
+    font-size: 18px;
   }
 }

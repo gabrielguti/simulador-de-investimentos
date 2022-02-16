@@ -10,13 +10,13 @@ const Card = ({ title, value, greenColor }: CardProps) => {
     <>
       {greenColor ? (
         <div className="card">
-          <p>{title}</p>
+          <p id="card-title">{title}</p>
           <span id="green">{value}</span>
         </div>
       ) : (
         <div className="card">
-          <p>{title}</p>
-          <span>{value}</span>
+          <p id="card-title">{title}</p>
+          <span id="card-span">{value}</span>
         </div>
       )}
     </>

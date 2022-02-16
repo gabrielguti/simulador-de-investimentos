@@ -10,7 +10,7 @@ const ResponseData = () => {
         simulateData.map((item: any, index: number) => {
           return (
             <div id="result-box" key={index}>
-              <div id="title">
+              <div id="title-response">
                 <h2>Resultado da simulação</h2>
               </div>
               <div id="cards-box">
