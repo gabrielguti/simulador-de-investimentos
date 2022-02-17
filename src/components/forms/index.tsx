@@ -26,7 +26,7 @@ const Form = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const buttonHandlerIndexacao = ( 
+  const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
@@ -106,7 +106,7 @@ const Form = () => {
 
   return (
     <section id="FormContainer">
-      <div id="title">
+      <div id="title-form">
         <h2>Simulador</h2>
       </div>
       <form
@@ -181,7 +181,7 @@ const Form = () => {
               data-testid="pre-button"
             >
               {checkPre ? <CheckIcon id="checkIcon" /> : <></>}
-              Pré
+              PRÉ
             </button>
             <button
               type="button"
@@ -191,7 +191,7 @@ const Form = () => {
               className={checkPos ? "orange" : ""}
             >
               {checkPos ? <CheckIcon id="checkIcon" /> : <></>}
-              Pós
+              PÓS
             </button>
             <button
               type="button"
@@ -201,7 +201,7 @@ const Form = () => {
               className={checkFix ? "orange" : ""}
             >
               {checkFix ? <CheckIcon id="checkIcon" /> : <></>}
-              Fixado
+              FIXADO
             </button>
           </div>
 
@@ -240,7 +240,7 @@ const Form = () => {
               onClick={handleReset}
               id="clearData"
             >
-              Limpar dados
+              Limpar campos
             </button>
             <button data-testid="send-button" id="sendData" type="submit">
               Simular

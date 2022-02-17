@@ -6,8 +6,13 @@ import "./styles/global.css";
 function App() {
   return (
     <>
-      <Form />
-      <ResponseData />
+      <header>
+        <h1>Simulador de Investimentos</h1>
+      </header>
+      <section id="app">
+        <Form />
+        <ResponseData />
+      </section>
     </>
   );
 }

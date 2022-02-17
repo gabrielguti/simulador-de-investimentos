@@ -3,12 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 10px;
 }
 
 .FormBox {
   min-width: 280px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +18,8 @@
   width: 246px;
 }
 .InputsBox {
-  height: 45vh;
+  min-height: 300px;
+  max-height: 450px;
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
@@ -29,13 +29,14 @@
 
 .ButtonBox {
   width: 248px;
-  height: 10vh;
+  height: 55px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin-top: 4vh;
+  margin-top: 10px;
   display: flex;
+  justify-content: center;
 }
 .orange {
   background-color: rgba(242, 151, 68, 1);
@@ -46,11 +47,12 @@
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   width: 120px;
-  height: 5vh;
+  height: 46px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #LeftButton:hover {
   background-color: rgba(242, 151, 68, 1);
@@ -69,11 +71,12 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   width: 120px;
-  height: 5vh;
+  height: 46px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #RightButton:hover {
   background-color: rgba(242, 151, 68, 1);
@@ -104,31 +107,35 @@
   border-top-left-radius: 10px;
   border: 1px solid black;
   width: 80px;
-  height: 5vh;
+  height: 46px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #MiddleButtonPos {
   width: 80px;
   border: 1px solid black;
-  height: 5vh;
+  height: 46px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #RightButtonFix {
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   border: 1px solid black;
   width: 80px;
-  height: 5vh;
+  height: 46px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 15px;
 }
 #checkIcon {
   color: rgba(222, 226, 230, 1);
+  font-size: 18px;
 }
 #LeftButtonPre:hover {
   background-color: rgba(242, 151, 68, 1);
@@ -162,9 +169,10 @@
 #send-clear-buttons {
   width: 248px;
   margin-top: 4vh;
+  display: flex;
 }
 #clearData {
-  height: 5vh;
+  height: 46px;
   width: 120px;
   border: 1px solid;
   border-bottom-left-radius: 10px;
@@ -174,8 +182,7 @@
   font-size: 16px;
 }
 #sendData {
-  height: 5vh;
-  border: 1px solid;
+  height: 46px;
   width: 120px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
@@ -193,16 +200,18 @@
 .title {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
 }
 .formComponents {
   margin-top: 30px;
+  height: 500px;
 }
 
 @media screen and (min-width: 768px) {
   .FormBox {
     align-items: flex-start;
     flex-direction: row;
-
     width: 550px;
     justify-content: space-between;
     margin-left: 10px;
@@ -214,6 +223,10 @@
   .formComponents {
     margin-top: 0px;
   }
+  #title-form {
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -222,13 +235,63 @@
   }
   .formComponents {
     margin-top: 0px;
+    height: 600px;
   }
 
   .FormBox {
     width: 510px;
   }
   #FormContainer {
-    width: 50%;
-    margin-left: 30px;
+    width: 48%;
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  #title-form {
+    float: right;
+    width: 510px;
+  }
+  .InputsBox {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #title-form {
+    width: 550px;
+  }
+  .FormBox {
+    width: 550px;
+  }
+  #send-clear-buttons {
+    margin-left: -110%;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    margin-top: 100px;
+  }
+  #clearData {
+    width: 45%;
+    border-radius: 10px;
+    height: 58px;
+    font-size: 18px;
+  }
+  #sendData {
+    width: 45%;
+    border: 0;
+    border-radius: 10px;
+    height: 58px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .FormBox {
+    width: 600px;
+  }
+  #send-clear-buttons {
+    margin-left: -118%;
+  }
+  #title-form {
+    width: 600px;
   }
 }
