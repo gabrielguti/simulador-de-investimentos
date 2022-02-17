@@ -1,6 +1,7 @@
    <body>
    <aside>
     <h1>Simulador de investimentos</h1>
+	   <h2> Deploy da aplicação: <a href="https://simulador-de-investimentos.vercel.app/">Simulador de investimentos</a></h2>
     <p>
       Aplicação front-end criada com o intuito de simular o processo de
       investimento com base em valores reais. De acordo com o tipo de indexação
