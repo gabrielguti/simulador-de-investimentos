@@ -50,7 +50,7 @@ context("Simulate", () => {
     }).as("simulate-data");
 
     cy.contains("Bruto").click();
-    cy.contains("Fixado").click();
+    cy.contains("FIXADO").click();
 
     cy.get("input[data-testid=aporte-inicial-input]").type(1200, {
       delay: 250,

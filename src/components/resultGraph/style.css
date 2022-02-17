@@ -70,9 +70,23 @@
     margin-left: 90%;
   }
   #graph-title {
+    display: flex;
     width: 462px;
     margin-top: 35px;
     font-size: 18px;
     font-weight: bolder;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .graphic {
+    width: 620px;
+  }
+  #graph-title {
+    width: 560px;
+  }
+  .legend-value {
+    margin-top: 45%;
+    margin-left: 93%;
   }
 }

@@ -26,7 +26,7 @@ const Form = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const buttonHandlerIndexacao = ( 
+  const buttonHandlerIndexacao = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
     event.preventDefault();
