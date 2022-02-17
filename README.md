@@ -30,7 +30,7 @@
       <li>Prettier</li>
       <li>Cypress</li>
       <li>Jest</li>
-      <li>Heroku</li>
+      <li>Vercel</li>
     </ul>
   </aside>
   <aside>
