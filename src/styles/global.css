@@ -40,10 +40,29 @@ select {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-
+header{
+  text-align: center;
+  margin-top: 2vh;
+  margin-bottom: 7vh;
+}
+header h1 {
+  font-weight: bolder;
+  
+}
 @media screen and (min-width: 1024px) {
   #root {
     display: flex;
+    flex-direction: column;
     height: 100vh;
+  }
+  #app{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vw;
+  }
+  header{
+    margin-top: 10vh;
+    margin-bottom: 2vh;
   }
 }
