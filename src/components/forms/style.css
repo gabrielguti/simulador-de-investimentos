@@ -1,0 +1,297 @@
+#FormContainer {
+  background-color: rgba(222, 226, 230, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.FormBox {
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.FormBox input {
+  width: 246px;
+}
+.InputsBox {
+  min-height: 300px;
+  max-height: 450px;
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 246px;
+}
+
+.ButtonBox {
+  width: 248px;
+  height: 55px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.orange {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+
+#LeftButton {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 120px;
+  height: 46px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+#LeftButton:hover {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+  border: 2px solid black;
+}
+#LeftButton:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+#RightButton:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+#RightButton {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 120px;
+  height: 46px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+#RightButton:hover {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+  border: 2px solid black;
+}
+
+#inputField {
+  border-bottom: 2px solid black;
+  font-size: medium;
+  font-weight: bold;
+}
+#red-label {
+  color: red;
+}
+#red-input {
+  border-bottom: 2px solid red;
+  font-size: medium;
+  font-weight: bold;
+}
+#error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+}
+#LeftButtonPre {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid black;
+  width: 80px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+#MiddleButtonPos {
+  width: 80px;
+  border: 1px solid black;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+#RightButtonFix {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px solid black;
+  width: 80px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+#checkIcon {
+  color: rgba(222, 226, 230, 1);
+  font-size: 18px;
+}
+#LeftButtonPre:hover {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+  border: 2px solid black;
+}
+#LeftButtonPre:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+#MiddleButtonPos:hover {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+  border: 2px solid black;
+}
+#MiddleButtonPos:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+
+#RightButtonFix:hover {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+  border: 2px solid black;
+}
+#RightButtonFix:focus {
+  background-color: rgba(242, 151, 68, 1);
+  color: rgba(222, 226, 230, 1);
+}
+
+#send-clear-buttons {
+  width: 248px;
+  margin-top: 4vh;
+  display: flex;
+}
+#clearData {
+  height: 46px;
+  width: 120px;
+  border: 1px solid;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  color: black;
+  font-weight: bolder;
+  font-size: 16px;
+}
+#sendData {
+  height: 46px;
+  width: 120px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  color: black;
+  font-weight: bolder;
+  background-color: rgb(156, 153, 153);
+  font-size: 16px;
+}
+#clearData:hover {
+  background-color: rgba(242, 151, 68, 1);
+}
+#sendData:hover {
+  background-color: rgba(242, 151, 68, 1);
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 14px;
+}
+.formComponents {
+  margin-top: 30px;
+  height: 500px;
+}
+
+@media screen and (min-width: 768px) {
+  .FormBox {
+    align-items: flex-start;
+    flex-direction: row;
+    width: 550px;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #send-clear-buttons {
+    margin-left: -60%;
+  }
+  .formComponents {
+    margin-top: 0px;
+  }
+  #title-form {
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #send-clear-buttons {
+    margin-left: -50%;
+  }
+  .formComponents {
+    margin-top: 0px;
+    height: 600px;
+  }
+
+  .FormBox {
+    width: 510px;
+  }
+  #FormContainer {
+    width: 48%;
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  #title-form {
+    float: right;
+    width: 510px;
+  }
+  .InputsBox {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  #title-form {
+    width: 550px;
+  }
+  .FormBox {
+    width: 550px;
+  }
+  #send-clear-buttons {
+    margin-left: -110%;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    margin-top: 100px;
+  }
+  #clearData {
+    width: 45%;
+    border-radius: 10px;
+    height: 58px;
+    font-size: 18px;
+  }
+  #sendData {
+    width: 45%;
+    border: 0;
+    border-radius: 10px;
+    height: 58px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .FormBox {
+    width: 600px;
+  }
+  #send-clear-buttons {
+    margin-left: -118%;
+  }
+  #title-form {
+    width: 600px;
+  }
+}
