@@ -47,7 +47,7 @@
         <p>
           Faça o clone/download deste repositório, execute o comando <b>yarn</b> para
           instalar as dependências do projeto. Em seguida, rode o comando <b>yarn
-          start</b>.
+          start</b>. Se preferir, acesse apenas o link do deploy e rode apenas a API.
         </p>
     <h3>Testes:</h3>
     <ul>
