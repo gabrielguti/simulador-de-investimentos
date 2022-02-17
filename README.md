@@ -1,46 +1,77 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+   <body>
+   <aside>
+    <h1>Simulador de investimentos</h1>
+    <p>
+      Aplicação front-end criada com o intuito de simular o processo de
+      investimento com base em valores reais. De acordo com o tipo de indexação
+      e tipo de rendimento escolhido pelo usuário. A aplicação executa o método
+      GET na API para que as informações retornem de acordo com o respectivo rendimento e
+      indexação. Os dados preenchidos no formulário atrvés dos inputs não serão
+      enviados a fake API. Porém, são obrigatórios para que a simulação ocorra.
+    </p>
+   </aside>
+  <aside>
+    <h3>Construção da Aplicação:</h3>
+    <ul>
+      <li>React JS</li>
+      <li>Typescript</li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>Styled Components (Javascript)</li>
+      <li>Context API</li>
+      <li>Bibliotecas externas (Yup, Hook Form e Material UI)</li>
+    </ul>
+  </aside>
+  
+  <aside>
+    <h3>Ferramentas:</h3>
+    <ul>
+      <li>Eslint</li>
+      <li>Prettier</li>
+      <li>Cypress</li>
+      <li>Jest</li>
+      <li>Heroku</li>
+    </ul>
+  </aside>
+  <aside>
+    <h2>Utilização:</h2>
+    	<h3>Requisitos:</h3>
+				<ul>
+					<li>NodeJS</li>
+					<li>Yarn</li>
+					<li>NPM</li>
+				</ul>
+    <h2>Como executar:</h2>
+      <h3>Aplicação:</h3>
+        <p>
+          Faça o clone/download deste repositório, execute o comando <b>yarn</b> para
+          instalar as dependências do projeto. Em seguida, rode o comando <b>yarn
+          start</b>.
+        </p>
+    <h3>Testes:</h3>
+    <ul>
+      <li><b>yarn test</b> (roda a bateria de testes)</li>
+      <li>
+        <b>yarn run cypress open</b>(Certifique-se de que a aplicação esteja rodando.
+        Procure pelo teste simulate.spec.js)
+      </li>
+    </ul>
+    <h2>Documentação API:</h2>
+    <a
+      href="https://github.com/eqi-investimentos/desafio-fake-api"
+      target="_blank"
+      >API</a
+    >
+   </aside>
+  <footer>
+    <aside>
+    <h3>Aviso:</h3>
+    <p>
+      Certifique-se (apenas se rodar o projeto na sua máquina) de que os locais
+      em que a fake API e a aplicação ficam localizados sejam diferentes. Por
+      padrão a fake API fica localizada em http://localhost:3000.
+    </p>
+    </aside>
+    <h4>Gabriel Gutierrez</h4>
+  </footer>
+</body>
